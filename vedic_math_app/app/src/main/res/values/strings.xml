@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- اسم التطبيق -->
+    <string name="app_name">الرياضيات الفيدية</string>
+
+    <!-- رسالة التحميل -->
+    <string name="loading">جاري تحميل المحتوى...</string>
+
+    <!-- رسالة الخطأ -->
+    <string name="error_loading">حدث خطأ أثناء تحميل الصفحة</string>
+
+    <!-- رسالة عدم توفر الإنترنت -->
+    <string name="no_internet">يرجى التحقق من اتصال الإنترنت</string>
+</resources>

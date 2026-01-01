@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- موضوع التطبيق الأساسي - بدون شريط عنوان -->
+    <style name="Theme.VedicMathApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- اللون الأساسي للتطبيق -->
+        <item name="colorPrimary">@color/indigo_700</item>
+        <item name="colorPrimaryVariant">@color/indigo_800</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- اللون الثانوي -->
+        <item name="colorSecondary">@color/indigo_500</item>
+        <item name="colorSecondaryVariant">@color/indigo_600</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- لون الخلفية -->
+        <item name="android:windowBackground">@color/white</item>
+
+        <!-- إخفاء شريط الحالة -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- تمكين الحافة الممتدة للنظام -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+</resources>

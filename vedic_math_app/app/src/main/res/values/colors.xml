@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- الألوان الأساسية للتطبيق -->
+    <color name="indigo_700">#4338CA</color>
+    <color name="indigo_800">#3730A3</color>
+    <color name="indigo_600">#4F46E5</color>
+    <color name="indigo_500">#6366F1</color>
+
+    <!-- الألوان الأساسية -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- ألوان الخلفية -->
+    <color name="gray_100">#F3F4F6</color>
+    <color name="gray_50">#F9FAFB</color>
+
+    <!-- ألوان النص -->
+    <color name="gray_800">#1F2937</color>
+    <color name="gray_600">#4B5563</color>
+</resources>

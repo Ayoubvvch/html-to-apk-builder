@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- رمز الآلة الحاسبة - يمثل الرياضيات الفيدية -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,27c-14.9,0 -27,12.1 -27,27s12.1,27 27,27s27,-12.1 27,-27S68.9,27 54,27zM54,76.5c-12.4,0 -22.5,-10.1 -22.5,-22.5S41.6,31.5 54,31.5S76.5,41.6 76.5,54S66.4,76.5 54,76.5z"/>
+
+    <!-- رمز الجمع (+) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,46h-6v-6h-4v6h-6v4h6v6h4v-6h6z"/>
+
+    <!-- رمز الضرب (×) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M58,50l3.5,-3.5l2.5,2.5l-3.5,3.5l3.5,3.5l-2.5,2.5l-3.5,-3.5l-3.5,3.5l-2.5,-2.5l3.5,-3.5l-3.5,-3.5l2.5,-2.5z"/>
+
+</vector>

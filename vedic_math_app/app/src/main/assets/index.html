@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أتقن الضرب الذهني: طريقة الرياضيات الفيدية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        /* Style for LTR math content inside RTL page */
+        .math-ltr {
+            direction: ltr;
+            unicode-bidi: embed;
+            display: inline-block;
+            text-align: left;
+        }
+        .step-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 1rem 0;
+            min-height: 120px;
+        }
+        .num-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 30px);
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: relative;
+        }
+        .num-grid-3x3 {
+            grid-template-columns: repeat(3, 30px);
+        }
+        .num-item {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .arrow {
+            position: absolute;
+            stroke: #4f46e5;
+            stroke-width: 2;
+            fill: none;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-5xl font-bold text-indigo-700">أتقن الضرب الذهني</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-2">الطريقة التي ستحول عقلك إلى آلة حاسبة بشرية باستخدام الرياضيات الفيدية</p>
+        </header>
+
+        <main class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+            <!-- Introduction -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-indigo-600 border-r-4 border-indigo-500 pr-4 mb-4">ما هي الطريقة؟</h2>
+                <p class="text-base md:text-lg leading-relaxed">
+                    سنتعلم أقوى تقنية للضرب الذهني تُعرف باسم "الضرب العمودي والمتقاطع" (Vertically and Crosswise)، وهي جوهرة من الرياضيات الفيدية القديمة. جمال هذه الطريقة يكمن في بساطتها وقدرتها على حل أي عملية ضرب (عددين في عددين، ثلاثة في ثلاثة، إلخ) بنفس النمط المنطقي، مما يجعلها سريعة وفعالة للغاية بعد التدريب.
+                </p>
+            </section>
+
+            <!-- 2x2 Multiplication -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-indigo-600 border-r-4 border-indigo-500 pr-4 mb-4">المستوى الأول: ضرب عددين في عددين</h2>
+                <p class="mb-4">لنأخذ المثال التالي: <span class="math-ltr font-bold text-xl p-1 bg-indigo-100 rounded">32 &times; 41</span>. تخيل الأرقام فوق بعضها هكذا:</p>
+                <div class="text-center text-2xl font-bold math-ltr leading-relaxed">
+                    <div>3  2</div>
+                    <div>&times; 4  1</div>
+                    <hr class="w-20 mx-auto border-gray-400 my-2">
+                </div>
+                <div class="space-y-8 mt-6">
+                    <!-- Step 1 -->
+                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <h3 class="font-bold text-lg mb-2">الخطوة 1: الضرب العمودي (الآحاد)</h3>
+                        <div class="md:flex md:items-center">
+                            <div class="flex-1">
+                                <p>نضرب الأرقام في خانة الآحاد: <span class="math-ltr font-bold">2 &times; 1 = 2</span>.</p>
+                                <p>هذا هو الرقم الأول من اليمين في إجابتنا.</p>
+                                <p class="mt-2">الناتج حتى الآن: <span class="math-ltr font-bold text-xl p-1 bg-green-100 rounded">_ _ 2</span></p>
+                            </div>
+                            <div class="flex-1 step-visual">
+                                <div class="num-grid math-ltr">
+                                    <div class="num-item">3</div><div class="num-item text-indigo-600">2</div>
+                                    <div class="num-item">4</div><div class="num-item text-indigo-600">1</div>
+                                    <svg class="arrow" width="30" height="50" viewBox="0 0 30 50" style="left: 40px; top: 0px;">
+                                        <line x1="15" y1="5" x2="15" y2="45" marker-end="url(#arrowhead)" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <h3 class="font-bold text-lg mb-2">الخطوة 2: الضرب المتقاطع والجمع</h3>
+                        <div class="md:flex md:items-center">
+                            <div class="flex-1">
+                                <p>نضرب بشكل متقاطع ونجمع النتائج:</p>
+                                <p class="math-ltr font-bold my-2">(3 &times; 1) + (2 &times; 4) = 3 + 8 = 11</p>
+                                <p>نكتب 1 ونحتفظ بالـ 1 الآخر للخطوة التالية.</p>
+                                <p class="mt-2">الناتج حتى الآن: <span class="math-ltr font-bold text-xl p-1 bg-green-100 rounded">_ 1 2</span> (مع الاحتفاظ بـ 1)</p>
+                            </div>
+                            <div class="flex-1 step-visual">
+                                 <div class="num-grid math-ltr">
+                                    <div class="num-item text-indigo-600">3</div><div class="num-item text-indigo-600">2</div>
+                                    <div class="num-item text-indigo-600">4</div><div class="num-item text-indigo-600">1</div>
+                                    <svg class="arrow" width="70" height="50" viewBox="0 0 70 50" style="left: 0px; top: 0px;">
+                                        <line x1="5" y1="5" x2="65" y2="45" />
+                                        <line x1="65" y1="5" x2="5" y2="45" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <h3 class="font-bold text-lg mb-2">الخطوة 3: الضرب العمودي (العشرات)</h3>
+                        <div class="md:flex md:items-center">
+                             <div class="flex-1">
+                                <p>نضرب الأرقام في خانة العشرات: <span class="math-ltr font-bold">3 &times; 4 = 12</span>.</p>
+                                <p>نضيف الـ 1 الذي احتفظنا به: <span class="math-ltr font-bold">12 + 1 = 13</span>.</p>
+                                <p class="mt-2">الناتج النهائي: <span class="math-ltr font-bold text-2xl p-1 bg-green-200 rounded">1312</span></p>
+                            </div>
+                            <div class="flex-1 step-visual">
+                                <div class="num-grid math-ltr">
+                                    <div class="num-item text-indigo-600">3</div><div class="num-item">2</div>
+                                    <div class="num-item text-indigo-600">4</div><div class="num-item">1</div>
+                                     <svg class="arrow" width="30" height="50" viewBox="0 0 30 50" style="left: 0px; top: 0px;">
+                                        <line x1="15" y1="5" x2="15" y2="45" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- 3x3 Multiplication -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-indigo-600 border-r-4 border-indigo-500 pr-4 mb-4">المستوى المتقدم: ضرب ثلاثة أعداد</h2>
+                <p class="mb-4">النمط يتوسع بشكل جميل. لنأخذ المثال <span class="math-ltr font-bold text-xl p-1 bg-indigo-100 rounded">123 &times; 456</span>. الخطوات هي (عمودي، متقاطع، نجمي، متقاطع، عمودي).</p>
+                 <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-center space-y-2">
+                    <p>1. عمودي (آحاد): <span class="math-ltr">3 &times; 6 = 18</span>. (نكتب 8، نحتفظ بـ 1)</p>
+                    <p>2. متقاطع (آحاد وعشرات): <span class="math-ltr">(2 &times; 6) + (3 &times; 5) + 1 = 12 + 15 + 1 = 28</span>. (نكتب 8، نحتفظ بـ 2)</p>
+                    <p>3. نجمي (الكل): <span class="math-ltr">(1 &times; 6) + (3 &times; 4) + (2 &times; 5) + 2 = 6 + 12 + 10 + 2 = 30</span>. (نكتب 0، نحتفظ بـ 3)</p>
+                    <p>4. متقاطع (عشرات ومئات): <span class="math-ltr">(1 &times; 5) + (2 &times; 4) + 3 = 5 + 8 + 3 = 16</span>. (نكتب 6، نحتفظ بـ 1)</p>
+                    <p>5. عمودي (مئات): <span class="math-ltr">(1 &times; 4) + 1 = 5</span>. (نكتب 5)</p>
+                    <p class="font-bold text-2xl pt-4">الناتج: <span class="math-ltr p-2 bg-green-200 rounded">56088</span></p>
+                </div>
+            </section>
+            
+            <!-- Interactive Practice Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-indigo-600 border-r-4 border-indigo-500 pr-4 mb-4">حان وقت التدريب!</h2>
+                <div class="bg-indigo-50 p-6 rounded-lg border-2 border-dashed border-indigo-200 text-center">
+                    <p class="text-lg mb-4">ما هو ناتج ضرب:</p>
+                    <div id="problem-display" class="text-4xl font-bold math-ltr text-gray-800 mb-4 p-2"></div>
+                    <input type="number" id="user-answer" class="text-center text-2xl w-full md:w-64 p-2 border-2 border-gray-300 rounded-md focus:border-indigo-500 focus:ring-indigo-500" placeholder="أدخل إجابتك هنا">
+                    <div class="mt-4 flex flex-col md:flex-row justify-center items-center gap-3">
+                        <button id="check-btn" class="w-full md:w-auto bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">تحقق من الإجابة</button>
+                        <button id="new-problem-btn" class="w-full md:w-auto bg-gray-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-700 transition-colors">مسألة جديدة</button>
+                    </div>
+                    <div id="result-message" class="mt-4 text-xl font-bold h-8"></div>
+                    <div id="solution-steps" class="mt-4 text-right p-4 bg-white rounded-lg border border-gray-200 hidden"></div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center text-gray-500 mt-8">
+            <p>تدرب يومياً لمدة 15 دقيقة وستلاحظ الفرق!</p>
+        </footer>
+    </div>
+
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#4f46e5" />
+        </marker>
+      </defs>
+    </svg>
+
+    <script>
+        const problemDisplay = document.getElementById('problem-display');
+        const userAnswerInput = document.getElementById('user-answer');
+        const checkBtn = document.getElementById('check-btn');
+        const newProblemBtn = document.getElementById('new-problem-btn');
+        const resultMessage = document.getElementById('result-message');
+        const solutionSteps = document.getElementById('solution-steps');
+
+        let num1, num2, correctAnswer;
+
+        function generateNewProblem() {
+            num1 = Math.floor(Math.random() * 90) + 10; // Random 2-digit number
+            num2 = Math.floor(Math.random() * 90) + 10; // Random 2-digit number
+            correctAnswer = num1 * num2;
+            problemDisplay.textContent = num1 + ' × ' + num2;
+            userAnswerInput.value = '';
+            resultMessage.textContent = '';
+            solutionSteps.classList.add('hidden');
+            solutionSteps.innerHTML = '';
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseInt(userAnswerInput.value);
+            if (isNaN(userAnswer)) {
+                resultMessage.textContent = 'الرجاء إدخال رقم';
+                resultMessage.className = 'mt-4 text-xl font-bold text-yellow-600';
+                return;
+            }
+
+            if (userAnswer === correctAnswer) {
+                resultMessage.textContent = 'إجابة صحيحة! رائع!';
+                resultMessage.className = 'mt-4 text-xl font-bold text-green-600';
+            } else {
+                resultMessage.textContent = 'إجابة خاطئة. الصحيح هو ' + correctAnswer;
+                resultMessage.className = 'mt-4 text-xl font-bold text-red-600';
+                showSolution();
+            }
+        }
+        
+        function showSolution() {
+            const n1_d2 = num1 % 10; // units digit of num1
+            const n1_d1 = Math.floor(num1 / 10); // tens digit of num1
+            const n2_d2 = num2 % 10; // units digit of num2
+            const n2_d1 = Math.floor(num2 / 10); // tens digit of num2
+
+            const step1_val = n1_d2 * n2_d2;
+            const step1_digit = step1_val % 10;
+            const step1_carry = Math.floor(step1_val / 10);
+
+            const step2_val = (n1_d1 * n2_d2) + (n1_d2 * n2_d1) + step1_carry;
+            const step2_digit = step2_val % 10;
+            const step2_carry = Math.floor(step2_val / 10);
+            
+            const step3_val = (n1_d1 * n2_d1) + step2_carry;
+
+            let stepsHTML = '<h4 class="font-bold text-lg mb-2">خطوات الحل لمسألة <span class="math-ltr">' + num1 + ' &times; ' + num2 + '</span>:</h4>';
+            stepsHTML += '<ol class="list-decimal list-inside space-y-2">';
+            stepsHTML += '<li><strong>الخطوة 1 (الآحاد):</strong> نضرب <span class="math-ltr">' + n1_d2 + ' &times; ' + n2_d2 + ' = ' + step1_val + '</span>.<br>نكتب ' + step1_digit + ' ونحتفظ بـ ' + step1_carry + '.</li>';
+            stepsHTML += '<li><strong>الخطوة 2 (متقاطع):</strong> نحسب <span class="math-ltr">(' + n1_d1 + ' &times; ' + n2_d2 + ') + (' + n1_d2 + ' &times; ' + n2_d1 + ')</span> ونضيف ما احتفظنا به.<br><span class="math-ltr">(' + (n1_d1 * n2_d2) + ') + (' + (n1_d2 * n2_d1) + ') + ' + step1_carry + ' = ' + step2_val + '</span>.<br>نكتب ' + step2_digit + ' ونحتفظ بـ ' + step2_carry + '.</li>';
+            stepsHTML += '<li><strong>الخطوة 3 (العشرات):</strong> نضرب <span class="math-ltr">' + n1_d1 + ' &times; ' + n2_d1 + '</span> ونضيف ما احتفظنا به.<br><span class="math-ltr">' + (n1_d1 * n2_d1) + ' + ' + step2_carry + ' = ' + step3_val + '</span>.<br>نكتب ' + step3_val + '.</li>';
+            stepsHTML += '</ol>';
+            stepsHTML += '<p class="font-bold text-xl mt-4">الناتج النهائي: <span class="math-ltr">' + correctAnswer + '</span></p>';
+            
+            solutionSteps.innerHTML = stepsHTML;
+            solutionSteps.classList.remove('hidden');
+            solutionSteps.classList.add('fade-in');
+        }
+
+        checkBtn.addEventListener('click', checkAnswer);
+        newProblemBtn.addEventListener('click', generateNewProblem);
+        userAnswerInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        // Generate the first problem on load
+        window.onload = generateNewProblem;
+    </script>
+</body>
+</html>
