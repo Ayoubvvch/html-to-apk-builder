@@ -6,4 +6,5 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="background">#667eea</color>
+    <color name="ic_launcher_background">#667eea</color>
 </resources>
