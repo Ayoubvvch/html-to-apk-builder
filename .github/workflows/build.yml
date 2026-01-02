@@ -27,9 +27,8 @@ jobs:
       - name: 🤖 إعداد Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: |
-            platforms;android-34
-            build-tools;34.0.0
+          api-level: 34
+          build-tools: 34.0.0
           accept-android-sdk-licenses: true
 
       - name: 🔧 منح صلاحية التنفيذ لـ Gradle
