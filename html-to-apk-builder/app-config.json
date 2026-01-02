@@ -1,0 +1,14 @@
+{
+  "appName": "My Professional App",
+  "appId": "com.example.myapp",
+  "versionCode": 1,
+  "versionName": "1.0.0",
+  "orientation": "portrait",
+  "themeColor": "#0d6efd",
+  "statusBarStyle": "dark",
+  "launchScreen": {
+    "backgroundColor": "#0d6efd",
+    "showDuration": 3000,
+    "showSpinner": false
+  }
+}

@@ -1,0 +1,94 @@
+name: 🚀 HTML to APK Builder
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: 📦 Build Android APK
+    
+    steps:
+      # 1. Checkout code
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+      
+      # 2. Setup Java 17
+      - name: ☕ Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+      
+      # 3. Setup Android SDK
+      - name: 🤖 Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          api-level: 34
+          build-tools: 34.0.0
+          accept-android-sdk-licenses: true
+      
+      # 4. Update app configuration
+      - name: ⚙️ Configure App Settings
+        run: |
+          echo "Configuring app from app-config.json..."
+          node scripts/configure.js
+      
+      # 5. Grant execute permission to gradlew
+      - name: 🔧 Make Gradlew Executable
+        run: chmod +x android/gradlew
+      
+      # 6. Build APK
+      - name: 🔨 Build Debug APK
+        run: |
+          cd android
+          ../gradlew assembleDebug --stacktrace
+      
+      # 7. Verify build output
+      - name: ✅ Verify Build Output
+        run: |
+          echo ""
+          echo "=== Build Verification ==="
+          ls -lh android/app/build/outputs/apk/debug/
+          APK_SIZE=$(stat -c%s android/app/build/outputs/apk/debug/app-debug.apk 2>/dev/null || echo "0")
+          echo "APK Size: $APK_SIZE bytes"
+          if [ "$APK_SIZE" -gt 1000 ]; then
+            echo "✅ Build successful! APK size is valid."
+          else
+            echo "❌ Build failed! APK not found or too small."
+            exit 1
+          fi
+      
+      # 8. Upload artifact
+      - name: 📤 Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug.apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 7
+      
+      # 9. Display download info
+      - name: ℹ️ Show Download Info
+        run: |
+          echo ""
+          echo "🎉==========================================🎉"
+          echo "   BUILD COMPLETED SUCCESSFULLY!"
+          echo "🎉==========================================🎉"
+          echo ""
+          echo "📥 Download your APK from:"
+          echo "   → Go to Actions tab"
+          echo "   → Select this workflow run"
+          echo "   → Download from Artifacts section"
+          echo ""
+          echo "📱 To install on your device:"
+          echo "   1. Enable 'Install from unknown sources'"
+          echo "   2. Transfer the APK to your device"
+          echo "   3. Open and install"
+          echo ""
