@@ -42,9 +42,8 @@ jobs:
       - name: 🤖 Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: |
-            platforms;android-34
-            build-tools;34.0.0
+          packages: "platforms;android-34
+build-tools;34.0.0"
 
       # 5. Update app configuration
       - name: ⚙️ Configure App Settings
