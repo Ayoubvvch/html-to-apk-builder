@@ -36,6 +36,14 @@ jobs:
             build-tools;34.0.0
           accept-android-sdk-licenses: true
 
+      # 3.5 Accept all Android SDK licenses
+      - name: ✅ Accept All SDK Licenses
+        run: |
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          echo "All licenses accepted!"
+
       # 4. Update app configuration
       - name: ⚙️ Configure App Settings
         run: |
