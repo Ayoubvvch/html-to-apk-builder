@@ -27,41 +27,43 @@ jobs:
           java-version: '17'
           cache: gradle
 
-      # 3. Setup Android SDK
+      # 3. Pre-accept all Android SDK licenses
+      - name: ✅ Pre-accept SDK Licenses
+        run: |
+          mkdir -p $HOME/android-sdk/licenses
+          echo "24333f8a63b6825ea9c5514f83c2829b004d1fee" > $HOME/android-sdk/licenses/android-sdk-license
+          echo "d56f5187479451e937f65e133d9a9e2254027f66" >> $HOME/android-sdk/licenses/android-sdk-license
+          echo "84831b9409646a918e30573bab4c9c91346d8abd" > $HOME/android-sdk/licenses/android-sdk-preview-license
+          echo "8933bad161af4178b1185d1a37fbf41ea5269c55" >> $HOME/android-sdk/licenses/android-sdk-license
+          echo "d975f751698a77b662f1254ddbeed3901e976f5a" >> $HOME/android-sdk/licenses/android-sdk-license
+          echo "Licenses pre-accepted!"
+
+      # 4. Setup Android SDK (without accept-licenses param)
       - name: 🤖 Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
           packages: |
             platforms;android-34
             build-tools;34.0.0
-          accept-android-sdk-licenses: true
 
-      # 3.5 Accept all Android SDK licenses
-      - name: ✅ Accept All SDK Licenses
-        run: |
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-          echo "All licenses accepted!"
-
-      # 4. Update app configuration
+      # 5. Update app configuration
       - name: ⚙️ Configure App Settings
         run: |
           echo "Configuring app from app-config.json..."
           cd html-to-apk-builder
           node scripts/configure.js
 
-      # 5. Grant execute permission to gradlew
+      # 6. Grant execute permission to gradlew
       - name: 🔧 Make Gradlew Executable
         run: chmod +x html-to-apk-builder/android/gradlew
 
-      # 6. Build APK
+      # 7. Build APK
       - name: 🔨 Build Debug APK
         run: |
           cd html-to-apk-builder/android
           ../gradlew assembleDebug --stacktrace
 
-      # 7. Verify build output
+      # 8. Verify build output
       - name: ✅ Verify Build Output
         run: |
           echo ""
@@ -76,7 +78,7 @@ jobs:
             exit 1
           fi
 
-      # 8. Upload artifact
+      # 9. Upload artifact
       - name: 📤 Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -84,7 +86,7 @@ jobs:
           path: html-to-apk-builder/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 7
 
-      # 9. Display download info
+      # 10. Display download info
       - name: ℹ️ Show Download Info
         run: |
           echo ""
