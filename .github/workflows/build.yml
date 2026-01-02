@@ -60,7 +60,7 @@ build-tools;34.0.0"
       - name: 🔨 Build Debug APK
         run: |
           cd html-to-apk-builder/android
-          ../gradlew assembleDebug --stacktrace
+          ./gradlew assembleDebug --stacktrace
 
       # 8. Verify build output
       - name: ✅ Verify Build Output
